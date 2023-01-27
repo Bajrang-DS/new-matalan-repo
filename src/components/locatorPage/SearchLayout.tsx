@@ -208,16 +208,16 @@ const optionClickHandler = () =>{
 
   return (
     <>
-      <div className="locator-full-width">
+      <div  className="locator-full-width">
         <div className="locator-container">
-          <div className="result-listing">
-            <div className="search-block">
+          <div  className="result-listing">
+            <div style={{background:"white"}} className="search-block">
 
               <h3 className="title">
                 Find Restaurants
               </h3>
               {/* <LocationBias />  */}
-              <div className="search-form">
+              <div  className="search-form">
                 <FilterSearch
                   customCssClasses={{
                     filterSearchContainer: "",
@@ -230,11 +230,11 @@ const optionClickHandler = () =>{
                       fieldApiName: "name",
 
                     },
-                    // {
-                    //   entityType: "location",
-                    //   fieldApiName: "address.line1",
+                    {
+                      entityType: "location",
+                      fieldApiName: "address.line1",
 
-                    // },
+                     },
                     // {
                     //   entityType: "location",
                     //   fieldApiName: "address.line2",
@@ -258,6 +258,7 @@ const optionClickHandler = () =>{
                   
                 />
                 <button
+              
                   className="button"
                   aria-label="Search bar icon"
                   id="search-location-button" onClick={Findinput}><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" className="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

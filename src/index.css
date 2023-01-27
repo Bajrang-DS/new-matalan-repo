@@ -105,12 +105,12 @@ body {
 
 
 .result.active{
-    @apply bg-[#f7e4d9]; 
+    @apply bg-[#ffffff]; 
 }
 
 /* Search */
 .search-block {
-    @apply bg-bg-color sticky top-0 lg:pr-2.5 z-10
+    @apply bg-white sticky top-0 lg:pr-2.5 z-10
 }
 .search-block .title{
     @apply text-lg font-title-text-font
@@ -121,7 +121,7 @@ body {
 }
 
 .search-form input {
-    @apply py-2.5 px-2.5 leading-6 h-auto bg-bg-color text-text-color border border-primary-btn-bg-color rounded
+    @apply py-2.5 px-2.5 leading-6 h-auto bg-white text-text-color border border-primary-btn-bg-color rounded
 }
 
 .search-form .button {

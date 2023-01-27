@@ -165,7 +165,7 @@ const Footer = () => {
                   </div><br />
                   <div className="row">
                     <div className="col-12@xs u-mar-v-medium@md-down">
-                      <span style={{}}><p className="u-font--smaller u-font-ta-c@md-down" data-copyright="">
+                      <span style={{font:"2px"}}><p className="u-font--smaller u-font-ta-c@md-down" data-copyright="">
                         © Copyright 2023 - Matalan
                         Perimeter Road,
                         Knowsley Industrial Park,

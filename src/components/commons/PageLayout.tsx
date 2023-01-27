@@ -12,7 +12,7 @@ type Props = {
 
 const PageLayout = ({ _site, children }: Props) => {
   return (
-    <div className="min-h-screen">
+    <div style={{background:"white"}} className="min-h-screen">
       <Header _site={_site} />
       {children}
       <Footer _site={_site}></Footer>

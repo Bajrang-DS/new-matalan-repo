@@ -15,7 +15,7 @@ type Props = {
     children,
   }: Props) => {
     return (
-        <div className="min-h-screen">
+        <div style={{background:"white"}} className="min-h-screen">
             <Header />
                 {children}
             <Footer />
