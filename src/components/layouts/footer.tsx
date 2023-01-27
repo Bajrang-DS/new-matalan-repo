@@ -4,8 +4,8 @@ import * as React from "react";
 
 const Footer = () => {
   return (
-    <footer style={{ background: "white", height: "400px" }} className="footer1">
-    <section style={{ height: "5px" }} className="footer-panel">
+    <footer style={{ background: "white", height: "400px" }} className="footer1 pt-6">
+    <section  className="footer-panel ">
       
         <div className="container">
           <div className="row o-footer__menu">
@@ -89,7 +89,7 @@ const Footer = () => {
 
               </div>
               <div>
-                <div className="col-12@xs col-3@lg u-mar-t-large o-footer__menu--social">
+                <div className="col-12@xs col-3@lg u-mar-t-large o-footer__menu--social pr-4">
                   <div className="row o-footer__app-store-container u-pad-b-medium">
                     <div className="col-12@xs o-footer__app-store-container__header-wrap u-mar-b-small">
                       <h4 className="u-font-wb u-font-ta-c@md-down">Download Our App</h4>
@@ -165,7 +165,7 @@ const Footer = () => {
                   </div><br />
                   <div className="row">
                     <div className="col-12@xs u-mar-v-medium@md-down">
-                      <span style={{font:"2px"}}><p className="u-font--smaller u-font-ta-c@md-down" data-copyright="">
+                      <span ><p style={{font:"small-caption"}} className="u-font--smaller u-font-ta-c@md-down" data-copyright="">
                         © Copyright 2023 - Matalan
                         Perimeter Road,
                         Knowsley Industrial Park,

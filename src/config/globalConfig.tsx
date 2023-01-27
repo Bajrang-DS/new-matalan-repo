@@ -1,6 +1,6 @@
 export const limit = 2; 
 
-export const radius = 50;
+export const radius = 40;
 
 export const defaultQuery = "";
 

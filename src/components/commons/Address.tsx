@@ -8,8 +8,8 @@ const Address = (props: any) => {
       <div className="icon-row location-address"><span className="icon"><img src={Mapicon} /></span> 
         <div>{address.line1}</div>
             {address.line2 && (<div>{address.line2}</div>)}
-            <div>{address.region}, {address.city},  </div>
-            <div>{address.countryCode}, {address.postalCode}</div>       
+            <div>{address.city}, {address.postalCode},  </div>
+            <div> {address.region}</div>       
       </div>
     </>
   );

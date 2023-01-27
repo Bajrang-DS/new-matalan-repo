@@ -37,9 +37,9 @@ const SearchLayout = (): JSX.Element => {
       onLoadData();
       onLoad=false;
     }   
-    // bindInputKeyup();
-    // handleEnterPress();
-    // optionClickHandler(); 
+    bindInputKeyup();
+    handleEnterPress();
+    optionClickHandler(); 
   },[]);
 
   const onLoadData = () =>{

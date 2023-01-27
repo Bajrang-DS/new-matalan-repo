@@ -307,21 +307,24 @@ function Infowindow(i:Number,result:any):void{
         (
         <div className="markerContent w-48 md:w-[350px] font-universpro font-normal text-darkgrey text-xs md:text-sm leading-6">
         <div className="nameData font-bold text-sm md:text-base">{result.name}
+       
         
         
-        
+        </div>
+        <div  style={{ float:"right",color:"green"  }}className="text-right">
+        {metersToMiles(result.distance)} miles
         </div>
         <div>{result.rawData.address.line1}</div>
          <div>{result.rawData.address.line2}</div>
          <div>{result.rawData.address.city}, {result.rawData.address.region}</div>
          <div >{result.rawData.address.countryCode},{result.rawData.address.postalCode}
          <div className="centered-container">
-        <button style={{background:"gray"}}>
+        <button style={{background:"green"}}>
         <a
           
           className="btn btn-primary" 
           href={result.rawData.slug}
-        ><span style={{color:"blue"}}>View Details</span> </a>
+        ><span style={{color:"white"}}>View Details</span> </a>
         </button></div>
         </div>
         </div>

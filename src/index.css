@@ -105,7 +105,7 @@ body {
 
 
 .result.active{
-    @apply bg-[#ffffff]; 
+    @apply bg-[#d8c412]; 
 }
 
 /* Search */
@@ -125,7 +125,7 @@ body {
 }
 
 .search-form .button {
-    @apply absolute top-0 right-0 py-2.5 px-2.5 leading-6 h-auto border border-b-primary-btn-bg-color rounded-tr rounded-br
+    @apply absolute top-0 right-0 py-2.5 px-2.5 leading-6 h-auto border-b-coloured-text-color rounded-tr rounded-br
 }
 
 .search-form .button svg {

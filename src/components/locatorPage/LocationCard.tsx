@@ -17,7 +17,7 @@ const metersToMiles = (meters: number) => {
 
 
 const LocationCard: CardComponent<Location> = ({ result }) => {
-  const { address, hours, mainPhone, timezone,distance } = result.rawData;
+  const { address, hours, mainPhone, timezone, distance } = result.rawData;
   const formattedPhone = formatPhoneNumber(mainPhone);
 
   const [timeStatus, setTimeStatus] = useState("");
@@ -28,54 +28,56 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
       setTimeStatus("");
     }
   }
-console.log(result);
+  console.log(result);
   return (
 
 
-    <div style={{background:"white"}} className={`location result`} id={`result-${result.index}`}>
-      <div style={{color:"green"  }}className="text-right">{metersToMiles(result.distance)} miles</div> 
+    <div  className={`location result`} id={`result-${result.index}`}>
+      <div style={{ color: "green" }} className="text-right">{metersToMiles(result.distance)} miles</div>
       <div className="grid grid-cols-2 py-4" >
 
-      
+
         {/* <h3 className="">{result.rawData.name}
       </h3> */}
-       <div >
-        <a
-          target={"_blank"}
-          href={result.rawData.slug}
-          className="font-semibold text-orange"
-          rel="noreferrer"
-        >
-         <span style={{color:"#f5821f"}}>{result.rawData.name}</span> 
+        <div >
+          <a
+            target={"_blank"}
+            href={result.rawData.slug}
+            className="font-semibold text-orange"
+            rel="noreferrer"
+          >
+            <span style={{ color: "#f5821f" }}>{result.rawData.name}</span>
 
-        </a>
-        <Address address={address} />
-        <span style={{ color: "green" }}>Contact:</span><a className="number_col" style={{ color: "black" }} href="">{mainPhone}</a>
+          </a>
+          <Address address={address} />
+          <span style={{ color: "green" }}>Contact:</span><a className="number_col" style={{ color: "black" }} href="">{mainPhone}</a>
 
-      </div>
-      <div >
-  
-        <div>
-        <button><a
-          target={"_blank"}
-          className="flex flex-col items-center text-sm text-orange"
-        >
+        </div>
+        <div >
 
-<GetDirection latitude={result?.rawData?.yextDisplayCoordinate?.latitude} longitude={result?.rawData?.yextDisplayCoordinate?.longitude}/>
+          <div>
+            <button style={{background:"yellow"}}><a
+            style={{color:"green"}}
+              target={"_blank"}
+              className="flex flex-col items-center text-sm text-orange"
+            >
 
-        </a></button></div>
-        <div className="centered-container">
-        <button >
-        <a
-          
-          className="btn btn-primary" 
-          href={result.rawData.slug}
-        ><span style={{color:"blue"}}>View Details</span> </a>
-        </button></div>
+              <GetDirection latitude={result?.rawData?.yextDisplayCoordinate?.latitude}
+               longitude={result?.rawData?.yextDisplayCoordinate?.longitude} />
+
+            </a></button></div>
+          <div className="centered-container">
+            <button style={{background:"khaki"}}>
+              <a
+
+                className="btn btn-primary"
+                href={result.rawData.slug}
+              ><span style={{ color: "blue" }}>View Details</span> </a>
+            </button></div>
+        </div>
       </div>
-      </div>
-     
-      </div>
+
+    </div>
   );
 }
 
