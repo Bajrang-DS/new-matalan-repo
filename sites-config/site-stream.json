@@ -1,17 +1,28 @@
 {
   "$id": "site-entity",
   "filter": {
-    "entityIds": ["siteGlobalData"] 
+    "entityIds": ["gd-1"] 
   },
   "source": "knowledgeGraph",
   "fields": [
+    "id",
+    "uid",
+    "meta",
     "name",
-    "facebookPageUrl",
-    "instagramHandle",
-    "twitterHandle"
+    "c_matalanLogo",
+    "c_headerLink",
+    "c_description",
+    "c_socials",
+    "c_footerLogo",
+    "c_customerServices",
+    "c_aboutMatalan",
+    "c_ourWebsites",
+    "c_appSectionText",
+    "c_appIcons",
+    "c_faqs"
   ],
   "localization": {
-    "locales": ["en"],
+    "locales": ["en_GB"],
     "primary": false
   }
 }

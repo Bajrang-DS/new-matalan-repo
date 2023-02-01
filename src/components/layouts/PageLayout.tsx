@@ -2,7 +2,7 @@ import * as React from "react";
 import Img, { Image } from "./Img";
 import Header from "./header";
 import Footer from "./footer";
-
+import Site from "../types/Site";
 type Props = {
     title?: string;
     _site?: any;
@@ -14,11 +14,13 @@ type Props = {
     _site,
     children,
   }: Props) => {
+    // console.log(_site);
     return (
-        <div style={{background:"white"}} className="min-h-screen">
-            <Header />
+     
+        <div style={{background:"white"}}  className="min-h-screen">
+            <Header _site={_site} />
                 {children}
-            <Footer />
+            <Footer _site={_site} />
         </div>
     );
   };

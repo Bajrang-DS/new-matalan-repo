@@ -10,6 +10,7 @@ import UserMarker from "..//../images/map-center.png";
 import Hours from '..//../components/commons/hours';
 import {renderToString} from "react-dom/server";
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
+import GetDirection from '../commons/GetDirection';
 
 /**
  * CSS class interface for the {@link GoogleMaps} component
@@ -326,7 +327,18 @@ function Infowindow(i:Number,result:any):void{
           href={result.rawData.slug}
         ><span style={{color:"white"}}>View Details</span> </a>
         </button></div>
+        <div className="centered-container">
+        <button style={{background:"yellow"}}>
+        <a
+           style={{color:"green"}}
+               className="btn btn-primary" 
+            >
+              <GetDirection latitude={result.rawData.yextDisplayCoordinate.latitude}
+               longitude={result.rawData.yextDisplayCoordinate.longitude} />
+
+            </a></button></div>
         </div>
+     
         </div>
         );
     let string=renderToString(MarkerContent);    

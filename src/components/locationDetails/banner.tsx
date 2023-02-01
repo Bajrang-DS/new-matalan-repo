@@ -6,46 +6,70 @@ import GetDirection from "../commons/GetDirection";
 import { formatPhoneNumber, formatPhoneNumberIntl } from 'react-phone-number-input';
 
 type Banner = {
-  text?: string;
+  name?: string;
   address?: any;
-  hours?: any;
+  hoursData?: any;
   timezone?: any;
   mainPhone?: any;
   latitude?: any;
   longitude?: any;
   children?: React.ReactNode;
-  name?:string
 };
 
 const Banner = (props: Banner) => {
-  const { 
-    text,
+  const {
+    name,
     address,
-    hours,
+    hoursData,
     timezone,
     mainPhone,
     latitude,
-    longitude ,
-    children 
+    longitude,
+    children
   } = props;
 
   const formattedPhone = formatPhoneNumber(mainPhone);
 
   return (
     <>
-      <div className="bg-green text-5xl font-bold text-black p-10 flex items-center justify-center flex-col gap-x-14 gap-y-10 md:flex-row">
-        <div>{text}</div>
-        <div><OpenCloseStatus timezone={timezone} hours={hours}>Status</OpenCloseStatus></div>
-        <div>{formattedPhone}</div>
-        <div>
-          <Address address={address}></Address>
+      <div
+        className={`relative z-10 w-full bg-cover bg-center h-72  `}
+      >
+        <div className="absolute left-10 right-10 flex flex-col items-center ">
+          <div className="w-96 my-8 rounded-xl bg-green-500 border-8 shadow-xl border-amber-600 px-4 py-2 text-center">
+            <div>
+              <h1 className="text-black text-3xl font-semibold">{name}</h1>
+              <p className="text-lg pt-2 text-black font-semibold">
+                <Address address={address}></Address>
+              </p>
+            </div>
+            <div className="centered-container">
+              <div><OpenCloseStatus timezone={timezone} hours={hoursData}></OpenCloseStatus></div>
+              {/* <h1 style={{ color: "white" }}> "Welcome In Our World"</h1> */}
+              {/* <Cta
+                buttonText="Order Pickup"
+                url="#"
+                style="text-orange bg-white shadow-xl"
+              ></Cta>
+              <Cta
+                buttonText="Order Delivery"
+                url="#"
+                style="text-orange bg-white shadow-xl"
+              ></Cta> */}
+            </div>
+            {/* <div>
+              <GetDirection buttonText={"View on google maps"} latitude={latitude}
+                longitude={longitude} ></GetDirection>
+            </div>
+            {children} */}
+          </div>
         </div>
-        <div>
-          <GetDirection  buttonText={"View on google maps"} latitude={latitude}
-                  longitude={longitude} ></GetDirection>
-        </div>
-        {children}
+
+        {/* <div className="w-60 my-8 rounded-xl bg-amber-500 border-8 shadow-xl border-amber-600 px-4 py-2 text-center">
+            <button><a className="text-white text-3xl font-semibold" href="">Order Now</a></button>
+          </div> */}
       </div>
+   
     </>
   );
 };

@@ -158,11 +158,13 @@ const Location: Template<TemplateRenderProps> = ({
   return (
     <>
 
+     
       <PageLayout _site={_site}>
         <Banner name={name} address={address} />
+        <section className="centered-container">
         <div className="centered-container">
           <div className="section">
-            <div className="grid grid-cols-2 gap-x-10 gap-y-10">
+            <div className="grid grid-cols-2 gap-x-10 gap-y-10 pl-6 pr-6 align-justify">
               <div className="bg-gray-100 p-2">
                 <Details address={address} phone={mainPhone}></Details>
 
@@ -170,7 +172,7 @@ const Location: Template<TemplateRenderProps> = ({
               <div className="bg-gray-100 p-2">
                 {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
               </div>
-              <div className="bg-gray-100 p-2">
+              <div style={{width:"500px",height:"500px"}} className=" p-2">
                 <StaticMap
                   latitude={yextDisplayCoordinate.latitude}
                   longitude={yextDisplayCoordinate.longitude}
@@ -178,14 +180,16 @@ const Location: Template<TemplateRenderProps> = ({
               </div>
 
               <div className="bg-gray-100 p-2">
-                <div className="text-xl font-semibold">{`About ${name}`}</div>
-                <p className="pt-4">{description}</p>
+                <div className="text-xl font-semibold text-justify">{`About ${name}`}</div>
+                <p className="pt-4 text-justify">{description}</p>
               </div>
             </div>
           </div>
 
         </div>
+        </section>
       </PageLayout>
+     
     </>
   );
 };

@@ -5,7 +5,7 @@ const Address = (props: any) => {
     const { address } = props; 
   return (
     <>
-      <div className="icon-row location-address"><span className="icon"><img src={Mapicon} /></span> 
+      <div className="icon-row location-address"> 
         <div>{address.line1}</div>
             {address.line2 && (<div>{address.line2}</div>)}
             <div>{address.city}, {address.postalCode},  </div>

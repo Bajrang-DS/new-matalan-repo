@@ -6,11 +6,11 @@ import { SearchHeadlessProvider, useSearchActions } from "@yext/search-headless-
 import PageLayout from "../components/layouts/PageLayout";
 import SearchLayout from "../components/locatorPage/SearchLayout";
 import {  AnswerExperienceConfig  } from "../config/globalConfig";
-import Header from "../components/layouts/header";
-import Footer from "../components/layouts/footer";
-
+ import Header from "../components/layouts/header";
+ import Footer from "../components/layouts/footer";
+ import Site from "../types/Site";
 export const getPath: GetPath<TemplateProps> = () => {
-  return `/locatorSearch`;
+  return `index.html`;
 };
 
 
@@ -25,7 +25,38 @@ export const getPath: GetPath<TemplateProps> = () => {
 //     fields: []
 //   },
 // };
+export const config: TemplateConfig = {
+  stream: {
+    $id: "locator-data",
+    // Specifies the exact data that each generated document will contain. This data is passed in
+    // directly as props to the default exported function.
+    fields: [
+      
+      "name",
+      "c_matalanLogo",
+      "c_headerLink",
+      "c_description",
+      "c_socials",
+      "c_footerLogo",
+      "c_customerServices",
+      "c_aboutMatalan",
+      "c_ourWebsites",
+      "c_appSectionText",
+      "c_appIcons",
+      "c_faqs"
 
+    ],
+    // Defines the scope of entities that qualify for this stream.
+    filter: {
+      entityIds: ["gd-1"] ,
+    },
+    // The entity language profiles that documents will be generated for.
+    localization: {
+      locales: ["en_GB"],
+      primary: false,
+    },
+  },
+};
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefixToRoot, path, document}): HeadConfig => {
   return {
     title: document.name,
@@ -36,23 +67,32 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefi
         type: "meta",
         attributes: {
           description: document.description,
+         
         },
       },
     ],
   };
 };
-
-const locatorSearch: Template<TemplateRenderProps> = ({relativePrefixToRoot, path, document}) => {
-
-const { _site } = document;
-
 const providerOptions: google.maps.MapOptions = {
   disableDefaultUI: true
 }
 
+const locatorSearch: Template<TemplateRenderProps> = ({
+  relativePrefixToRoot,
+  path,
+ 
+  document,
+}) => {
+  const {
+    _site
+  } = document;
+console.log("site",_site)
+
+
 return (
     <>
-    <PageLayout>
+    <div>
+  <PageLayout _site={_site} >
   
         <SearchHeadlessProvider
             experienceKey={AnswerExperienceConfig.experienceKey}
@@ -66,7 +106,8 @@ return (
            <SearchLayout/>           
         </SearchHeadlessProvider>  
        
-        </PageLayout>
+        </PageLayout >
+        </div>
     </>
   );
 };

@@ -17,7 +17,7 @@ const metersToMiles = (meters: number) => {
 
 
 const LocationCard: CardComponent<Location> = ({ result }) => {
-  const { address, hours, mainPhone, timezone, distance } = result.rawData;
+  const { address, hours, mainPhone, timezone } = result.rawData;
   const formattedPhone = formatPhoneNumber(mainPhone);
 
   const [timeStatus, setTimeStatus] = useState("");
@@ -28,7 +28,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
       setTimeStatus("");
     }
   }
-  console.log(result);
+  //console.log(result);
   return (
 
 
